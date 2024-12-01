@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 
+from .models import UserTable
+
 # Create your views here.
 
 class Login(View):
@@ -30,7 +32,8 @@ class Activities(View):
 
 class User(View):
     def get(self,request):
-        return render(request, 'admin/viewUser.html')    
+        u=UserTable.objects.all()
+        return render(request, 'admin/viewUser.html',{'u':u})    
 
 class Club(View):
     def get(self,request):
@@ -82,7 +85,35 @@ class Feedbackevent(View):
         
 class Sponserevent(View):
     def get(self,request):
-        return render(request, 'Events/Sponsers_view.html')   
+        return render(request, 'Events/Sponsers_view.html')  
+     
+class Manageclub(View):
+    def get(self,request):
+        return render(request,'admin/manageclub.html')
+    
+class ViewReport(View):
+    def get(self,request):
+        return render(request,'admin/viewreport.html')
+    
+class NotificationClub(View):
+    def get(self,request):
+        return render(request, 'Club/notificationview.html')    
+     
+class Contactev(View):
+    def get(self,request):
+        return render(request,'Events/contactev.html')
+    
+class InstructionView(View):
+    def get(self,request):
+        return render(request,'Events/instruction_ev.html')
+
+class Teamsheetev(View):
+    def get(self,request):
+        return render(request,'Events/teamsheet_ev.html')
+    
+         
+    
+     
 
 
 

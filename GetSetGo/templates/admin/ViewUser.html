@@ -10,18 +10,17 @@
     <div class="man">
     <div class="cont">
         <table>
+            
+            {% for i in U %}
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone no</th>
-                <th>Address</th>
+                <td>{{u.name}}</td>
+                <td>{{u.Email}}</td>
+                <td>{{u.Phone}}</td>
+                <td>{{u.Address}}</td>
+                <td>{{u.gender}}</td>
+                <td>{{u.age}}</td>>
             </tr>
-            <tr>
-                <td>dhkjfdshj</td>
-                <td>dhkjfdshj</td>
-                <td>dhkjfdshj</td>
-                <td>dhkjfdshj</td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </div>

@@ -21,4 +21,12 @@ urlpatterns = [
     path('eventview', Eventviewevent.as_view(), name='eventview'),
     path('feedbackevent', Feedbackevent.as_view(), name='feedbackevent'),
     path('sponsers', Sponserevent.as_view(), name='sponserevent'),
+    path('user',User.as_view(),name="user"),
+    path('manageclub',Manageclub.as_view(),name="manageclub"),
+    path('viewreport',ViewReport.as_view(),name='viewreport'),
+    path('notificationview',NotificationClub.as_view(),name='notificationview'),
+    path('contact',Contactev.as_view(),name='contact'),
+    path('instructionsev',InstructionView.as_view(),name='instructionsev'),
+    path('teamsheetev',Teamsheetev.as_view(),name='teamsheetev'),
+    
 ]
